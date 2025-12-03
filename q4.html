@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4</title>
+</head>
+<body>
+    <button id="inc" onclick="increment()">+</button>
+    <button id="dec" onclick="decrement()">-</button>
+    <h1 id="num"></h1>
+
+    <script>
+        let text = document.getElementById("num");
+
+        
+        let x = Number(localStorage.getItem("count")) || 0;
+        text.textContent = x;
+
+        function decrement(){
+            x = x - 1;
+            text.textContent = x;
+            localStorage.setItem("count", x);
+        }
+
+        function increment(){
+            x = x + 1;
+            text.textContent = x;
+            localStorage.setItem("count", x);
+        }
+    </script>
+</body>
+</html>
